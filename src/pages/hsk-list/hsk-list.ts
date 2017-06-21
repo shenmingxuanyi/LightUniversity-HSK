@@ -22,6 +22,12 @@ export class HskListPage {
         console.log('ionViewDidLoad HskListPage');
 
         console.log(this.testProvider.getData())
+
+
+    }
+
+    appointmentHsk($event) {
+        this.navCtrl.push("AppointmentHskPage");
     }
 
 }
