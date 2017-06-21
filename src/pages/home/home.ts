@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {HskListPage} from "../hsk-list/hsk-list";
 
 @Component({
     selector: 'page-home',
@@ -13,7 +12,7 @@ export class HomePage {
     }
 
     makeAppointment($event) {
-        this.navCtrl.push(HskListPage)
+        this.navCtrl.push("HskListPage");
     }
 
 }

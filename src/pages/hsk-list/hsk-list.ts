@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {TestProvider} from "../../providers/test/test";
 
 /**
  * Generated class for the HskListPage page.
@@ -9,16 +10,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  */
 @IonicPage()
 @Component({
-  selector: 'page-hsk-list',
-  templateUrl: 'hsk-list.html',
+    selector: 'page-hsk-list',
+    templateUrl: 'hsk-list.html',
 })
 export class HskListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    constructor(public navCtrl: NavController, public navParams: NavParams, public testProvider: TestProvider) {
+    }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HskListPage');
-  }
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad HskListPage');
+
+        console.log(this.testProvider.getData())
+    }
 
 }
