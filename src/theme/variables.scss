@@ -5,15 +5,12 @@
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
 
-
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
 
-
 @import "ionic.globals";
-
 
 // Shared Variables
 // --------------------------------------------------
@@ -21,9 +18,6 @@ $app-direction: ltr;
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
-
-
-
 
 // Named Color Variables
 // --------------------------------------------------
@@ -34,34 +28,43 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+    primary: #00a6b6,
+    secondary: #eb6b06,
+    thirdary:#83807c,
+    danger: #f53d3d,
+    light: #f4f4f4,
+    dark: #222
 );
 
+// ios
+// --------------------------------------------------
+$toast-ios-background: rgba(0, 0, 0, .6);
+$toast-ios-title-padding: 1rem;
+$list-ios-margin-bottom: 16px;
+$toolbar-ios-title-font-weight: normal;
+
+// android
+// --------------------------------------------------
+
+$text-input-md-show-focus-highlight: false;
+$text-input-md-show-valid-highlight: false;
+$text-input-md-show-invalid-highlight: false;
+$toast-md-background: rgba(0, 0, 0, .6);
+$toast-md-title-font-size: 1.4rem;
+$toast-md-title-padding: 1rem;
+$toolbar-md-title-font-weight: normal;
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
-
-
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
-
-
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
-
-
 
 // App Theme
 // --------------------------------------------------
@@ -72,14 +75,12 @@ $colors: (
 
 @import "ionic.theme.default";
 
-
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/v2/ionicons/
 
 @import "ionic.ionicons";
-
 
 // Fonts
 // --------------------------------------------------

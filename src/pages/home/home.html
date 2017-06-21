@@ -1,17 +1,169 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+
+    <ion-navbar color="primary">
+        <ion-title>HSK</ion-title>
+    </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+
+
+    <ion-list style="background-color: #fff;">
+
+        <div text-center padding-vertical style="border-bottom: 0.55px solid #dedede;">
+            <img class="animated bounceIn" style="height: 50px;" src="./assets/image/school-logo.png">
+        </div>
+
+        <ion-item>
+
+            <h2 ion-text color="primary">XXXXXXXXXXXX</h2>
+            <p text-wrap>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+
+        </ion-item>
+
+    </ion-list>
+
+
+    <ion-list no-lines style="background-color: #fff;">
+
+        <ion-item>
+
+            <p text-wrap>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            <p text-wrap>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+
+        </ion-item>
+        <ion-item>
+            <div padding style="border: 0.55px solid #dedede;background-color: #fafafa;">
+                <p text-wrap>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+                <p text-wrap>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-grid style="padding: 0px;">
+                <ion-row class="session-list" style="margin: -5px;">
+                    <ion-col col-4>
+                        <div class="session-item">
+
+                        </div>
+                    </ion-col>
+                    <ion-col col-4>
+                        <div class="session-item">
+
+                        </div>
+                    </ion-col>
+                    <ion-col col-4>
+                        <div class="session-item">
+
+                        </div>
+                    </ion-col>
+                    <ion-col col-4>
+                        <div class="session-item">
+
+                        </div>
+                    </ion-col>
+                    <ion-col col-4>
+                        <div class="session-item">
+
+                        </div>
+                    </ion-col>
+                    <ion-col col-4>
+                        <div class="session-item">
+
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
+        <div padding-horizontal padding-bottom>
+            <button (click)="makeAppointment($event)" class="animated bounce " ion-button block
+                    style="background-color: #ffa800;">
+                马上预约
+            </button>
+        </div>
+
+    </ion-list>
+
+
+    <ion-list no-lines style="background-color: #fff;">
+
+        <ion-item style="border-bottom: 0.55px solid #dedede; ">
+
+            <h2 text-center ion-text color="primary">4 Step To Your Free Lesson</h2>
+
+        </ion-item>
+
+        <ion-item>
+
+            <ion-grid style="padding: 0;">
+                <ion-row>
+                    <ion-col col-3 text-center>
+                        <ion-icon color="primary" name="ios-appstore-outline" style="font-size: 6rem;"></ion-icon>
+                    </ion-col>
+                    <ion-col col-3 text-center>
+                        <ion-icon color="primary" name="ios-appstore-outline" style="font-size: 6rem;"></ion-icon>
+                    </ion-col>
+                    <ion-col col-3 text-center>
+                        <ion-icon color="primary" name="ios-appstore-outline" style="font-size: 6rem;"></ion-icon>
+                    </ion-col>
+                    <ion-col col-3 text-center>
+                        <ion-icon color="primary" name="ios-appstore-outline" style="font-size: 6rem;"></ion-icon>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-3 text-center>
+                        <p text-wrap>XXXXXX,XXXXXX</p>
+                    </ion-col>
+                    <ion-col col-3 text-center>
+                        <p text-wrap>XXXXXX,XXXXXX</p>
+                    </ion-col>
+                    <ion-col col-3 text-center>
+                        <p text-wrap>XXXXXX,XXXXXX</p>
+                    </ion-col>
+                    <ion-col col-3 text-center>
+                        <p text-wrap>XXXXXX,XXXXXX</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+
+                    <ion-col no-padding col-3 text-center class="time-item">
+
+                        <span class="time-number">1</span>
+
+                    </ion-col>
+                    <ion-col no-padding col-3 text-center class="time-item">
+
+                        <span class="time-number">2</span>
+
+                    </ion-col>
+                    <ion-col no-padding col-3 text-center class="time-item">
+
+                        <span class="time-number">3</span>
+
+                    </ion-col>
+                    <ion-col no-padding col-3 text-center class="time-item">
+
+                        <span class="time-number">4</span>
+
+                    </ion-col>
+
+                </ion-row>
+            </ion-grid>
+
+            <p text-center text-wrap margin-top>
+                *每个人只有一次免费试听的机会
+            </p>
+
+        </ion-item>
+
+        <div padding-horizontal padding-bottom>
+            <button class="animated bounce" ion-button block color="primary">
+                马上获取免费试听
+            </button>
+        </div>
+
+    </ion-list>
+
 </ion-content>

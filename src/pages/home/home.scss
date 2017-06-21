@@ -1,3 +1,64 @@
 page-home {
 
+    .session-list {
+
+        .session-item {
+            width: 100%;
+            padding-bottom: 100%;
+            border: 0.55px solid #dedede;
+            background-color: #fefefe;
+        }
+
+    }
+
+    .time-item {
+        position: relative;
+
+
+
+        &::before {
+            content: " ";
+            position: absolute;
+            z-index: -1;
+            height: 1px;
+            left: 0;
+            right: 0;
+            border-bottom: 2px solid map_get($colors, 'primary');
+
+            top: calc(50% - 1px);
+
+
+        }
+
+        &:first-child {
+            &::before {
+                left: 50%;
+            }
+        }
+
+        &:last-child {
+            &::before {
+                right: 50%;
+            }
+        }
+        .time-number {
+            display: inline-block;
+            color: #fff;
+            font-size: 1.6rem;
+            line-height: 2.7rem;
+            width: 2.8rem;
+            height: 2.8rem;
+            max-height: 2.8rem;
+            min-height: 2.8rem;
+            max-width: 2.8rem;
+            min-width: 2.8rem;
+            background-color: map_get($colors, 'primary');
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+    }
+
 }
+

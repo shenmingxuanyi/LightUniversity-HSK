@@ -1,16 +1,283 @@
-// http://ionicframework.com/docs/v2/theming/
+/** content背景颜色 **/
+$ion-content-background-color: #eeeff1;
+/** 介绍card头背景颜色 **/
+//$info-card-header-color: rgba(0, 166, 182, 0.6); //#00a6b6
+$info-card-header-color: rgba(red(map_get($colors, 'primary')), green(map_get($colors, 'primary')), blue(map_get($colors, 'primary')), .6);
+/** 申请list头背景颜色 **/
+$degree-card-header-color: #e3f9ff;
 
+body.disconnected-network {
+    filter: grayscale(100%);
+    transition: filter 300ms;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+ion-content.content {
+    background-color: $ion-content-background-color;
+}
+
+@each $color-name, $color-base, $color-contrast in get-colors($colors) {
+
+    *.border-color-#{$color-name}, *[border-color-#{$color-name}] {
+        border-color: $color-base;
+    }
+
+    *.background-color-#{$color-name}, *[background-color-#{$color-name}] {
+        background-color: $color-base;
+    }
+
+}
+
+*.align-self-start, *[align-self-start] {
+    align-self: flex-start;
+}
+
+*.align-self-end, *[align-self-end] {
+    align-self: flex-end;
+}
+
+*.align-self-center, *[align-self-center] {
+    align-self: center;
+}
+
+*.align-self-stretch, *[align-self-stretch] {
+    align-self: stretch;
+}
+
+*.align-self-baseline, *[align-self-baseline] {
+    align-self: baseline;
+}
+
+*.no-margin, *[no-margin] {
+    margin: 0;
+}
+
+*.no-padding, *[no-padding] {
+    padding: 0;
+}
+
+*, img {
+    &.no-border-radius, &[no-border-radius] {
+        border-radius: 0;
+    }
+}
+
+ion-list {
+    &.inset, &[inset] {
+        &.full, &[full] {
+            margin: 0;
+            border-radius: 0;
+            margin-bottom: $list-ios-margin-bottom;
+        }
+    }
+}
+
+button.item.item-md, ion-item.item.item-md {
+    .item-inner {
+        margin-left: 8px;
+    }
+}
+
+.header-slides {
+    height: auto;
+
+    .slide-zoom {
+        height: 100%;
+        min-height: 50vw;
+
+        position: relative;
+
+        .slide-image {
+            width: 100vw;
+            height: 56.25vw;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center center;
+            display: inline-block;
+        }
+
+        .title {
+            position: absolute;
+            left: 5%;
+            right: 5%;
+            bottom: 10%;
+        }
+    }
+
+    .swiper-pagination {
+
+        .swiper-pagination-bullet {
+
+            width: 5px;
+            height: 5px;
+
+            margin: 0 8px;
+
+            border-radius: 50%;
+            box-shadow: 0 0 0px 3px rgba(255, 255, 255, .25);
+
+            background-color: #fff;
+            opacity: 1;
+
+            &.swiper-pagination-bullet-active {
+                background-color: #ee751a;
+                box-shadow: 0 0 0px 3px rgba(249, 120, 9, .25);
+            }
+        }
+
+    }
+
+}
+
+.item {
+    &.required, &[required='true'] {
+        &::before {
+            content: '*';
+            color: map_get($colors, 'danger');
+            position: absolute;
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.ios {
+    .item {
+        &.required, &[required='true'] {
+            &::before {
+                left: 6px;
+            }
+        }
+    }
+}
+
+.md {
+    .item {
+        &.required, &[required] {
+            &::before {
+                left: 10px;
+            }
+        }
+    }
+}
+
+.image-container {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+
+    overflow: hidden;
+    background-color: #efefef;
+
+    .image-background {
+        position: absolute;
+
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        background-position: center center;
+
+        background-color: #efefef;
+    }
+
+    .image-delete-button {
+        position: absolute;
+        right: -10px;
+        top: -8px;
+
+        -webkit-opacity: .8;
+        -moz-opacity: .8;
+        -o-opacity: .8;
+        opacity: .8;
+
+        &.activated {
+
+            -webkit-opacity: .6;
+            -moz-opacity: .6;
+            -o-opacity: .6;
+            opacity: .6;
+
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    }
+
+    .image-check-button {
+        position: absolute;
+        right: -10px;
+        bottom: -8px;
+
+        -webkit-opacity: .8;
+        -moz-opacity: .8;
+        -o-opacity: .8;
+        opacity: .8;
+
+        &.activated {
+
+            -webkit-opacity: .6;
+            -moz-opacity: .6;
+            -o-opacity: .6;
+            opacity: .6;
+
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    }
+}
+
+//输入框校验
+input, textarea:not(:disabled):not(:read-only) {
+    transition: color 618ms;
+}
+
+input.ng-invalid:not(:focus):not(.ng-untouched):not(:disabled):not(:read-only),
+textarea.ng-invalid:not(:focus):not(.ng-untouched):not(:disabled):not(:read-only) {
+    color: map_get($colors, 'danger');
+}
+
+input.ng-invalid:not(:focus):not(.ng-untouched):not(:disabled):not(:read-only)::-moz-placeholder,
+textarea.ng-invalid:not(:focus):not(.ng-untouched):not(:disabled):not(:read-only)::-moz-placeholder {
+    color: map_get($colors, 'danger');
+    -moz-transition: color 618ms;
+}
+
+input.ng-invalid:not(:focus):not(.ng-untouched):not(:disabled):not(:read-only):-ms-input-placeholder,
+textarea.ng-invalid:not(:focus):not(.ng-untouched):not(:disabled):not(:read-only):-ms-input-placeholder {
+    color: map_get($colors, 'danger');
+    -ms-transition: color 618ms;
+}
+
+input.ng-invalid:not(:focus):not(.ng-untouched):not(:disabled):not(:read-only)::-webkit-input-placeholder,
+textarea.ng-invalid:not(:focus):not(.ng-untouched):not(:disabled):not(:read-only)::-webkit-input-placeholder {
+    color: map_get($colors, 'danger');
+    text-indent: 0;
+    -webkit-transition: color 618ms;
+}
+
+.toast-md .toast-wrapper {
+    left: 5%;
+    right: 5%;
+    width: auto;
+    border-radius: .65rem;
+}
+
+ion-item.item[tappable], [ion-item].item[tappable] {
+    ion-checkbox, ion-radio {
+        .item-cover {
+            left: inherit;
+            right: 0;
+            width: 80px;
+        }
+    }
+}
