@@ -13,14 +13,119 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
-    <test></test>
+    <img src="../assets/image/personal-center-background.jpg"/>
 
-    <div test="123"></div>
+    <ion-scroll class="scroll-tabs" scrollX="true" scrollY="false">
 
-    {{'123'|test}}
+        <button class="scroll-tab-button" ion-button clear color="dark">123123</button>
+        <button class="scroll-tab-button" ion-button clear color="dark">123123</button>
+        <button class="scroll-tab-button active" ion-button clear color="primary">123123</button>
+        <button class="scroll-tab-button" ion-button clear color="dark">123123</button>
+        <button class="scroll-tab-button" ion-button clear color="dark">123123</button>
+        <button class="scroll-tab-button" ion-button clear color="dark">123123</button>
+        <button class="scroll-tab-button" ion-button clear color="dark">123123</button>
+        <button class="scroll-tab-button" ion-button clear color="dark">123123</button>
 
 
-    <button ion-button block (click)="appointmentHsk($event)"></button>
+    </ion-scroll>
+
+    <ion-list inset class="lesson-list">
+
+        <button ion-item detail-none>
+            <ion-thumbnail item-left>
+                <img src="../assets/image/zfx.png" height="179" width="179"/>
+            </ion-thumbnail>
+            <p>Top.1</p>
+            <h2>Hello Hi I love you.</h2>
+
+            <ion-note item-right>
+                <ion-icon name="arrow-up"></ion-icon>
+            </ion-note>
+
+        </button>
+
+        <ion-item>
+
+            <p>
+                <ion-icon name="" color="primary"></ion-icon>
+                Lesson 1:I Love You.
+            </p>
+
+            <p style="color: #dedede">(1 X 50min)</p>
+
+            <button (click)="navCtrl.push('AppointmentHskPage')" ion-button item-right color="primary">
+                Reserve Now
+            </button>
+
+        </ion-item>
+
+        <ion-item>
+
+            <p>
+                <ion-icon name="" color="primary"></ion-icon>
+                Lesson 1:I Love You.
+            </p>
+
+            <p style="color: #dedede">(1 X 50min)</p>
+
+            <button (click)="navCtrl.push('AppointmentHskPage')" ion-button item-right color="primary">
+                Reserve Now
+            </button>
+
+        </ion-item>
+
+        <ion-item>
+
+            <p>
+                <ion-icon name="" color="primary"></ion-icon>
+                Lesson 1:I Love You.
+            </p>
+
+            <p style="color: #dedede">(1 X 50min)</p>
+
+            <button disabled ion-button item-right color="primary">
+                Reserve Now
+            </button>
+
+        </ion-item>
+
+
+    </ion-list>
+
+    <ion-list inset class="lesson-list">
+
+        <button ion-item detail-none>
+            <ion-thumbnail item-left>
+                <img src="../assets/image/zfx.png" height="179" width="179"/>
+            </ion-thumbnail>
+            <p>Top.1</p>
+            <h2>Hello Hi I love you.</h2>
+
+            <ion-note item-right>
+                <ion-icon name="arrow-up"></ion-icon>
+            </ion-note>
+
+        </button>
+    </ion-list>
+
+    <ion-list inset class="lesson-list">
+
+        <button ion-item detail-none>
+            <ion-thumbnail item-left>
+                <img src="../assets/image/zfx.png" height="179" width="179"/>
+            </ion-thumbnail>
+            <p>Top.1</p>
+            <h2>Hello Hi I love you.</h2>
+
+            <ion-note item-right>
+                <ion-icon name="arrow-up"></ion-icon>
+            </ion-note>
+
+        </button>
+    </ion-list>
+
+    <!--<button ion-button block (click)="appointmentHsk($event)"></button>-->
+
 </ion-content>
