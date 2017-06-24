@@ -6,13 +6,64 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>HskTimePicker</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>HskTimePicker</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content style="background-color: #fff;">
+
+    <ion-item no-lines>
+        <h2 ion-text color="primary">
+            AM
+        </h2>
+    </ion-item>
+
+    <ion-list no-lines>
+        <ion-item>
+            <h1 ion-text color="primary">
+                PM
+            </h1>
+        </ion-item>
+
+
+        <ion-grid>
+            <ion-row class="time-block-list">
+                <ion-col col-4>
+
+                    <div class="time-block-item unable">
+                        <div class="time">
+                            12:50-11:40
+                        </div>
+                    </div>
+
+                </ion-col>
+
+                <ion-col col-4>
+
+                    <div class="time-block-item normal">
+                        <div class="time">
+                            12:50-11:40
+                        </div>
+                    </div>
+
+                </ion-col>
+
+                <ion-col col-4>
+
+                    <div class="time-block-item checked">
+                        <div class="time">
+                            12:50-11:40
+                        </div>
+                    </div>
+
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+    </ion-list>
 
 </ion-content>
