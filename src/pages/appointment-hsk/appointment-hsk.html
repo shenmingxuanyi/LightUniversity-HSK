@@ -15,7 +15,6 @@
 
 <ion-content>
 
-
     <div>
         <ion-item-divider style="background-color: transparent;">
             <ion-icon item-left name="ios-color-palette-outline" color="primary"></ion-icon>
@@ -51,13 +50,6 @@
             <ion-icon item-left name="ios-color-palette-outline" color="primary"></ion-icon>
             <p ion-text color="primary">Choose Your Preferred Time of Day </p>
         </ion-item-divider>
-        <ion-card style="margin-top: 0;margin-bottom: 0">
-            <button ion-item (click)="navCtrl.push('HskTimePickerPage')">
-                <p>
-                    选择预约时段
-                </p>
-            </button>
-        </ion-card>
         <ion-card style="margin-top: 8px;margin-bottom: 0">
             <button ion-item>
                 <p>
@@ -75,49 +67,10 @@
         </ion-item-divider>
 
         <div style="margin-top: -12px;">
-            <ion-card>
-
-                <ion-item>
-
-                    <ion-thumbnail item-left tappable (click)="navCtrl.push('HskTeacherInfoPage')">
-                        <img src="../assets/image/zfx.png" height="179" width="179"/>
-                    </ion-thumbnail>
-
-                    <ion-label>
-                        <ion-row>
-                            <ion-col no-padding>
-                                <h2>Blob</h2>
-                            </ion-col>
-                            <ion-col no-padding>
-                                <p text-right ion-text color="danger">
-                                    <ion-icon name="ios-heart"></ion-icon>
-                                    345
-                                </p>
-                            </ion-col>
-                        </ion-row>
-
-                        <p>Reserved:
-                            <ion-icon color="primary" name="ios-star"></ion-icon>
-                            <ion-icon color="primary" name="ios-star"></ion-icon>
-                            <ion-icon color="primary" name="ios-star"></ion-icon>
-                            <ion-icon color="primary" name="ios-star"></ion-icon>
-                            <ion-icon color="primary" name="ios-star-outline"></ion-icon>
-                        </p>
-
-                        <p>Course:<span ion-text color="primary">456</span></p>
-                    </ion-label>
-
-
-                </ion-item>
-
-                <div padding-horizontal>
-                    <button ion-button block small color="primary">更换老师</button>
-                </div>
-            </ion-card>
 
             <ion-card>
 
-                <ion-item>
+                <button ion-item (click)="navCtrl.push('HskTeacherInfoPage')">
 
                     <ion-thumbnail item-left>
                         <img src="../assets/image/zfx.png" height="179" width="179"/>
@@ -145,10 +98,9 @@
                         </p>
                         <p>Course:<span ion-text color="primary">456</span></p>
                     </ion-label>
-                    <ion-checkbox item-right></ion-checkbox>
 
 
-                </ion-item>
+                </button>
 
                 <ion-item>
                     <p>AM:</p>
@@ -238,7 +190,6 @@
                         </p>
                         <p>Course:456</p>
                     </ion-label>
-                    <ion-checkbox item-right></ion-checkbox>
 
 
                 </ion-item>
@@ -331,7 +282,6 @@
                         </p>
                         <p>Course:456</p>
                     </ion-label>
-                    <ion-checkbox item-right></ion-checkbox>
 
 
                 </ion-item>
@@ -424,7 +374,6 @@
                         </p>
                         <p>Course:456</p>
                     </ion-label>
-                    <ion-checkbox item-right></ion-checkbox>
 
 
                 </ion-item>
@@ -517,7 +466,6 @@
                         </p>
                         <p>Course:456</p>
                     </ion-label>
-                    <ion-checkbox item-right></ion-checkbox>
 
 
                 </ion-item>
@@ -610,7 +558,6 @@
                         </p>
                         <p>Course:456</p>
                     </ion-label>
-                    <ion-checkbox item-right></ion-checkbox>
 
 
                 </ion-item>
@@ -676,6 +623,5 @@
 
 
     </div>
-
 
 </ion-content>
