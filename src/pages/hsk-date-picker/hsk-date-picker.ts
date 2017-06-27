@@ -1,24 +1,96 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
+import {ArrayUtil} from "../../util/ArrayUtil";
+import {deepCopy} from "ionic-angular/util/util";
 
-/**
- * Generated class for the HskDatePickerPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
+const LIST = [
+    //当前用户可选的日期（14天）
+    {
+        "week": "Wed",
+        "gmt_date": "2017-05-31",
+        //标准时间
+        "cur_day": "31",
+        "cur_date": "2017-05-31",
+        //用户时间
+        "title_date": "May 31, 2017"
+    },
+    {
+        "week": "Thu",
+        "gmt_date": "2017-06-01",
+        "cur_day": "1",
+        "cur_date": "2017-06-01",
+        "title_date": "June 01, 2017"
+    },
+    {
+        "week": "Fri",
+        "gmt_date": "2017-06-02",
+        "cur_day": "2",
+        "cur_date": "2017-06-02",
+        "title_date": "June 02, 2017"
+    }
+];
+
 @IonicPage()
 @Component({
-  selector: 'page-hsk-date-picker',
-  templateUrl: 'hsk-date-picker.html',
+    selector: 'page-hsk-date-picker',
+    templateUrl: 'hsk-date-picker.html',
 })
 export class HskDatePickerPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    dateList: Array<any> = LIST;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HskDatePickerPage');
-  }
+    theme: string = 'primary';
+
+    markTheme: string = 'primary';
+
+    currentDate: any = {};
+
+    _weekList: Array<string> = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
+
+    _dayList: Array<Array<any>> = [];
+
+    markDateList: Array<string> = [];
+
+    constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController) {
+
+        this.dateList = this.navParams.get("dateList") || LIST;
+        this.currentDate = this.navParams.get("currentDate") || (this.dateList || []).length > 0 ? this.dateList[0] : null;
+
+    }
+
+    ionViewDidLoad() {
+
+        if (this.dateList && this.dateList.length > 0) {
+            let date = this.convertDateFromString(this.dateList[0]['cur_date']);
+            let list = deepCopy(this.dateList);
+            if (date) {
+                let index = date.getDay();
+                for (let i = 0; i < index; i++) {
+                    list.unshift(null);
+                }
+            }
+
+            this._dayList = ArrayUtil.reduceArray(list, 7);
+        }
+
+    }
+
+    convertDateFromString(dateString: string): Date {
+        if (dateString) {
+            let dateStrings: Array<string> = dateString.split("-");
+            console.log("dateStrings", dateStrings)
+            if (dateStrings.length >= 3) {
+                let date = new Date(parseInt(dateStrings[0], 10), parseInt(dateStrings[1], 10) - 1, parseInt(dateStrings[2], 10), 0, 0, 0, 0);
+                return date;
+            }
+        }
+    }
+
+    close($event, date) {
+        $event.stopImmediatePropagation()
+        $event.preventDefault();
+        this.viewController.dismiss(date);
+    }
 
 }
