@@ -28,6 +28,20 @@ const LIST = [
         "cur_day": "2",
         "cur_date": "2017-06-02",
         "title_date": "June 02, 2017"
+    },
+    {
+        "week": "Sat",
+        "gmt_date": "2017-06-03",
+        "cur_day": "3",
+        "cur_date": "2017-06-03",
+        "title_date": "June 03, 2017"
+    },
+    {
+        "week": "Sun",
+        "gmt_date": "2017-06-04",
+        "cur_day": "4",
+        "cur_date": "2017-06-04",
+        "title_date": "June 04, 2017"
     }
 ];
 
@@ -62,12 +76,21 @@ export class HskDatePickerPage {
     ionViewDidLoad() {
 
         if (this.dateList && this.dateList.length > 0) {
-            let date = this.convertDateFromString(this.dateList[0]['cur_date']);
             let list = deepCopy(this.dateList);
-            if (date) {
-                let index = date.getDay();
-                for (let i = 0; i < index; i++) {
+
+            let prevDate = this.convertDateFromString(this.dateList[0]['cur_date']);
+            if (prevDate) {
+                let prevIndex = prevDate.getDay();
+                for (let i = 0; i < prevIndex; i++) {
                     list.unshift(null);
+                }
+            }
+
+            let lastDate = this.convertDateFromString(this.dateList[this.dateList.length - 1]['cur_date']);
+            if (lastDate) {
+                let lastIndex = lastDate.getDay();
+                for (let i = 0; i < 7 - lastIndex; i++) {
+                    list.push(null);
                 }
             }
 
