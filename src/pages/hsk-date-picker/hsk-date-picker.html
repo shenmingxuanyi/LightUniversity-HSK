@@ -22,13 +22,9 @@
 
             <!-- week -->
             <ion-row class="week-bar">
-                <ion-col center no-padding text-center style="font-size: 1rem;">星期日</ion-col>
-                <ion-col center no-padding text-center style="font-size: 1rem;">星期一</ion-col>
-                <ion-col center no-padding text-center style="font-size: 1rem;">星期二</ion-col>
-                <ion-col center no-padding text-center style="font-size: 1rem;">星期三</ion-col>
-                <ion-col center no-padding text-center style="font-size: 1rem;">星期四</ion-col>
-                <ion-col center no-padding text-center style="font-size: 1rem;">星期五</ion-col>
-                <ion-col center no-padding text-center style="font-size: 1rem;">星期六</ion-col>
+                <ion-col *ngFor="let week of _weekList" center no-padding text-center style="font-size: 1rem;">
+                    {{week}}
+                </ion-col>
             </ion-row>
             <!-- days -->
             <div padding-vertical>
