@@ -36,7 +36,7 @@
             <p ion-text color="primary">Choose Your Date </p>
         </ion-item-divider>
         <ion-card style="margin-top: 0;margin-bottom: 0">
-            <button ion-item (click)="navCtrl.push('HskDatePickerPage')">
+            <button ion-item (click)="showHskDatePickerPage($event)">
                 <p>
                     April 21,2017
                 </p>
@@ -51,7 +51,7 @@
             <p ion-text color="primary">Choose Your Preferred Time of Day </p>
         </ion-item-divider>
         <ion-card style="margin-top: 0;margin-bottom: 0">
-            <button ion-item (click)="navCtrl.push('HskTimePickerPage')">
+            <button ion-item (click)="showHskTimePickerPage($event)">
                 <p>
                     选择预约时段
                 </p>
@@ -107,22 +107,34 @@
                     <ion-grid style="padding: 0;">
                         <ion-row style="margin: -5px;">
                             <ion-col style="padding: 0 5px;" col-4>
-                                <button disabled ion-button block small color="primary">09:15</button>
+                                <button disabled ion-button block small color="primary"
+                                        (click)="selectLessonTime($event,null)">09:15
+                                </button>
                             </ion-col>
                             <ion-col style="padding: 0 5px;" col-4>
-                                <button disabled ion-button block small color="primary">09:15</button>
+                                <button disabled ion-button block small color="primary"
+                                        (click)="selectLessonTime($event,null)">09:15
+                                </button>
                             </ion-col>
                             <ion-col style="padding: 0 5px;" col-4>
-                                <button ion-button block small color="primary">09:15</button>
+                                <button ion-button block small color="primary" (click)="selectLessonTime($event,null)">
+                                    09:15
+                                </button>
                             </ion-col>
                             <ion-col style="padding: 0 5px;" col-4>
-                                <button ion-button block small color="primary">09:15</button>
+                                <button ion-button block small color="primary" (click)="selectLessonTime($event,null)">
+                                    09:15
+                                </button>
                             </ion-col>
                             <ion-col style="padding: 0 5px;" col-4>
-                                <button ion-button block small color="primary">09:15</button>
+                                <button ion-button block small color="primary" (click)="selectLessonTime($event,null)">
+                                    09:15
+                                </button>
                             </ion-col>
                             <ion-col style="padding: 0 5px;" col-4>
-                                <button ion-button block small color="primary">09:15</button>
+                                <button ion-button block small color="primary" (click)="selectLessonTime($event,null)">
+                                    09:15
+                                </button>
                             </ion-col>
 
 

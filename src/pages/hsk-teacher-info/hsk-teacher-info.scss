@@ -1,17 +1,5 @@
 page-hsk-teacher-info {
 
-    ion-item[small], ion-item.small {
-        min-height: 0;
-
-        ion-label.label {
-            &.label-ios, &label-md {
-                margin-top: 8px;
-                margin-bottom: 8px;
-            }
-
-        }
-    }
-
     .intro {
         p.info {
             text-align: justify;

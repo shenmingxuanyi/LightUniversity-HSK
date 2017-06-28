@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, PopoverController} from 'ionic-angular';
 
 /**
  * Generated class for the AppointmentHskPage page.
@@ -14,11 +14,33 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 })
 export class AppointmentHskPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController) {
     }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad AppointmentHskPage');
+    }
+
+    showHskTimePickerPage($event) {
+        this.navCtrl.push('HskTimePickerPage', null, null, (data) => {
+            console.log(data)
+        }).then((data) => {
+            console.log(data)
+        })
+    }
+
+    showHskDatePickerPage($event) {
+        this.navCtrl.push('HskDatePickerPage')
+    }
+
+    selectLessonTime($event, timeData) {
+        let popover = this.popoverCtrl.create('ReserveLessonComfirmPage', {}, {cssClass: 'popover-container-lg'});
+
+        popover.onWillDismiss((data) => {
+            console.log(data);
+        });
+
+        popover.present();
     }
 
 }

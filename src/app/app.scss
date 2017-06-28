@@ -281,3 +281,39 @@ ion-item.item[tappable], [ion-item].item[tappable] {
         }
     }
 }
+
+ion-item[small], ion-item.small {
+    min-height: 0;
+
+    ion-label.label {
+        &.label-ios, &label-md {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+    }
+}
+
+.popover-container-lg {
+    .popover-content {
+        width: 80vw;
+    }
+}
+
+.popover-container-md {
+    .popover-content {
+        width: 70vw;
+    }
+}
+
+.popover-container-sm {
+    .popover-content {
+        width: 60vw;
+    }
+}
+
+.popover-container-xs {
+    .popover-content {
+        width: 60vw;
+    }
+}
