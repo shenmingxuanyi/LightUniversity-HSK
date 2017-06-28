@@ -294,6 +294,12 @@ ion-item[small], ion-item.small {
     }
 }
 
+.popover-container-xl {
+    .popover-content {
+        width: 90vw;
+    }
+}
+
 .popover-container-lg {
     .popover-content {
         width: 80vw;

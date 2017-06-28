@@ -34,7 +34,7 @@ export class AppointmentHskPage {
     }
 
     selectLessonTime($event, timeData) {
-        let popover = this.popoverCtrl.create('ReserveLessonComfirmPage', {}, {cssClass: 'popover-container-lg'});
+        let popover = this.popoverCtrl.create('ReserveLessonConfirmPopoverPage', {}, {cssClass: 'popover-container-xl'});
 
         popover.onWillDismiss((data) => {
             console.log(data);
