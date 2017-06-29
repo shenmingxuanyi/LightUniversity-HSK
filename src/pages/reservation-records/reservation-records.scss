@@ -10,4 +10,8 @@ page-reservation-records {
             }
         }
     }
+
+    .header {
+        background-color: rgba(red(map_get($colors, 'primary')), green(map_get($colors, 'primary')), blue(map_get($colors, 'primary')), .6);
+    }
 }
