@@ -77,4 +77,16 @@ export class AboutPage implements OnInit {
 
     }
 
+    kechengbiao($event) {
+        this.navCtrl.push('ReservationRecordsPage');
+    }
+
+    goumaicika($event) {
+        this.navCtrl.push('PurchaseLessonPackagePage');
+    }
+
+    goumaijilu($event) {
+        this.navCtrl.push('PurchaseRecordsPage');
+    }
+
 }
