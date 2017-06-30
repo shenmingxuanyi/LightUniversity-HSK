@@ -1,5 +1,5 @@
 import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
-import {Content, Header, NavController, PopoverController} from 'ionic-angular';
+import {Content, Header, ModalController, NavController, PopoverController} from 'ionic-angular';
 import {TestProvider} from "../../providers/test/test";
 
 
@@ -22,7 +22,7 @@ export class AboutPage implements OnInit {
 
     _startRadix: number = 0;
 
-    constructor(public navCtrl: NavController, public testProvider: TestProvider, public ngZone: NgZone, public popoverCtrl: PopoverController) {
+    constructor(public navCtrl: NavController, public testProvider: TestProvider, public ngZone: NgZone, public popoverCtrl: PopoverController, public modalController: ModalController) {
         this.testProvider.setData("你好，我是:AboutPage");
     }
 
@@ -98,10 +98,32 @@ export class AboutPage implements OnInit {
 
     paymentResultReceiptPage1($event) {
 
+        let modal = this.modalController.create('PaymentResultReceiptModalPage', {
+            icon: {
+                name: 'ios-close-circle-outline',
+                style: {fontSize: '25vmin', color: '#d6d6da'}
+            },
+            title: {
+                text: 'Your payment is filed',
+                style: {}
+            },
+            content: `<p>123123123123123</p><p>123123123123123</p><p>123123123123123</p><p>123123123123123</p>`,
+            button: {
+                text: 'Continue to pay',
+                click: ($event, component): Promise<any> => {
+                    return Promise.resolve();
+                }
+            }
+        }, {});
+
+        modal.present({ev: $event})
+
     }
 
     paymentResultReceiptPage2($event) {
+        let modal = this.modalController.create('PaymentResultReceiptModalPage', {}, {});
 
+        modal.present({ev: $event})
     }
 
 }

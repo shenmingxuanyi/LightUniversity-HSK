@@ -1,0 +1,44 @@
+<!--
+  Generated template for the PaymentResultReceiptModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+    <ion-navbar>
+        <ion-buttons right>
+            <button ion-button icon-only clear (click)="close($event,false)">
+                <ion-icon name="md-close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: #fff;" padding>
+
+
+    <div text-center style="padding: 8vmin 0">
+
+        <ion-icon [ngStyle]="model.icon.style" style="font-size: 25vmin;color:#d6d6da;"
+                  [name]="model?.icon?.name"></ion-icon>
+
+    </div>
+
+    <div text-center style="padding: 5vmin 0">
+        <h1 [ngStyle]="model?.title?.style" ion-text color="primary">{{model?.title?.text}}</h1>
+    </div>
+
+    <ion-item no-lines [innerHTML]="model?.content">
+
+    </ion-item>
+
+    <div padding-vertical>
+        <button *ngIf="model?.button" ion-button block color="primary" (click)="done($event)">{{model?.button.text}}
+        </button>
+    </div>
+
+
+</ion-content>
