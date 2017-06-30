@@ -89,4 +89,16 @@ export class AboutPage implements OnInit {
         this.navCtrl.push('PurchaseRecordsPage');
     }
 
+    satisfactionEvaluationPopoverPage($event) {
+
+    }
+
+    paymentResultReceiptPage1($event) {
+
+    }
+
+    paymentResultReceiptPage2($event) {
+
+    }
+
 }

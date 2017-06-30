@@ -13,5 +13,11 @@ page-reservation-records {
 
     .header {
         background-color: rgba(red(map_get($colors, 'primary')), green(map_get($colors, 'primary')), blue(map_get($colors, 'primary')), .6);
+        h4.title {
+            text-shadow: 0 0 3px 5px rgba(0, 0, 0, .35);
+        }
+        button.clouse {
+            text-shadow: 0 0 3px 5px rgba(0, 0, 0, .35);
+        }
     }
 }
