@@ -1,5 +1,5 @@
 import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
-import {Content, Header, NavController} from 'ionic-angular';
+import {Content, Header, NavController, PopoverController} from 'ionic-angular';
 import {TestProvider} from "../../providers/test/test";
 
 
@@ -22,7 +22,7 @@ export class AboutPage implements OnInit {
 
     _startRadix: number = 0;
 
-    constructor(public navCtrl: NavController, public testProvider: TestProvider, public ngZone: NgZone) {
+    constructor(public navCtrl: NavController, public testProvider: TestProvider, public ngZone: NgZone, public popoverCtrl: PopoverController) {
         this.testProvider.setData("你好，我是:AboutPage");
     }
 
@@ -90,6 +90,9 @@ export class AboutPage implements OnInit {
     }
 
     satisfactionEvaluationPopoverPage($event) {
+
+        let popover = this.popoverCtrl.create('SatisfactionEvaluationPopoverPage', {}, {cssClass: 'popover-container-lg'});
+        popover.present();
 
     }
 

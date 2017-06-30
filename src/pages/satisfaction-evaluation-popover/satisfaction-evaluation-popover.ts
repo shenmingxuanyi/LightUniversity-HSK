@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 
 /**
  * Generated class for the SatisfactionEvaluationPopoverPage page.
@@ -9,16 +9,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  */
 @IonicPage()
 @Component({
-  selector: 'page-satisfaction-evaluation-popover',
-  templateUrl: 'satisfaction-evaluation-popover.html',
+    selector: 'page-satisfaction-evaluation-popover',
+    templateUrl: 'satisfaction-evaluation-popover.html',
 })
 export class SatisfactionEvaluationPopoverPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    constructor(public navCtrl: NavController, public navParams: NavParams, public viewController: ViewController) {
+    }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SatisfactionEvaluationPopoverPage');
-  }
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad SatisfactionEvaluationPopoverPage');
+    }
+
+    close($event, result) {
+        this.viewController.dismiss(result);
+    }
 
 }
