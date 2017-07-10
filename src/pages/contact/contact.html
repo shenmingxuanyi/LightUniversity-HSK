@@ -8,28 +8,21 @@
 
 <ion-content>
 
-    <ion-slides centeredSlides="false" effect="coverflow" style="height: 61.8vw;">
-        <ion-slide>
-            <img src="./assets/photo/001.jpg"/>
-        </ion-slide>
+    <button ion-button block (click)="pay($event)">pay</button>
 
-        <ion-slide>
-            <img src="./assets/photo/002.jpg"/>
-        </ion-slide>
+    <button ion-button block (click)="play($event)">play</button>
 
-        <ion-slide>
-            <img src="./assets/photo/003.jpg"/>
-        </ion-slide>
+    <button ion-button block (click)="stop($event)">stop</button>
 
-        <ion-slide>
-            <img src="./assets/photo/004.jpg"/>
-        </ion-slide>
-
-        <ion-slide>
-            <img src="./assets/photo/005.jpg"/>
-        </ion-slide>
+    <button ion-button block (click)="camera($event)">stop</button>
 
 
-    </ion-slides>
+    <ion-item>
+        <ion-label>zoom</ion-label>
+        <ion-input [(ngModel)]="room"></ion-input>
+    </ion-item>
+
+    <button ion-button block (click)="zoom($event)">stop</button>
+
 
 </ion-content>

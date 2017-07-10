@@ -17,6 +17,11 @@ import {HttpModule} from "@angular/http";
 import {TestPipe} from '../pipes/test/test';
 import {TestDirectiveModule} from "../directives/test/test.module";
 import {TestPipeModule} from "../pipes/test/test.module";
+import {PayPal} from "@ionic-native/paypal";
+import {NativeAudio} from "@ionic-native/native-audio";
+import {StreamingMedia} from "@ionic-native/streaming-media";
+import {MediaCapture} from "@ionic-native/media-capture";
+import { ZoomProvider } from '../providers/zoom/zoom';
 
 @NgModule({
     declarations: [
@@ -45,8 +50,13 @@ import {TestPipeModule} from "../pipes/test/test.module";
     providers: [
         StatusBar,
         SplashScreen,
+        PayPal,
+        StreamingMedia,
+        NativeAudio,
+        MediaCapture,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
-        TestProvider
+        TestProvider,
+    ZoomProvider
     ]
 })
 export class AppModule {
